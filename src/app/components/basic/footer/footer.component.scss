@@ -1,0 +1,16 @@
+.pizzaro-handheld-footer-bar ul li {
+  a {
+    text-indent: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-size: 3.5rem;
+    }
+  }
+  svg {
+    fill: #fff;
+    width: 6rem;
+    height: 6rem;
+  }
+}

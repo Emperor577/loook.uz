@@ -1,0 +1,24 @@
+/**
+ * Strictly Layout Styles
+ */
+
+.page-template-template-homepage-v5 {
+	.site-main {
+		margin-left: 60px;
+		margin-right: 60px;
+	}
+}
+
+.stretch-full-width {
+	@include stretch-full-width;
+}
+
+.no-margin-header .site-header {
+	margin-bottom: 0;
+}
+
+.no-margin-content .site-content,
+.no-margin-content .site-content .site-main {
+	margin-bottom: 0;
+}
+

@@ -1,0 +1,39 @@
+<div class="open-cart-preview">
+  <div class="cart-header">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><title>bag solid</title><path d="M466.41,497.68l-7.24-261.45a59,59,0,0,0-58.89-57.37H390c-.64-46.16-6.45-72.17-19.55-88.66C355.13,71,331.21,67,300,67S244.86,71,229.58,90.19c-13.08,16.46-18.88,42.4-19.54,88.39l-10,0H200a59,59,0,0,0-59,57.33l-7.41,261.77a34,34,0,0,0,34,35H432.43a34,34,0,0,0,34-34.94ZM300,85c31.58,0,46.84,4.43,56.32,16.37,10.28,12.94,15.05,36.35,15.64,77.44L228,178.61C229.27,92.88,248.43,85,300,85Zm60.53,311.16a79.67,79.67,0,0,1-8.08,8.57A77.84,77.84,0,0,1,230.58,312,34.84,34.84,0,0,1,244,318.47a33.8,33.8,0,0,1,9.6,11.92c3.54,7.34,3,11.27,3.23,18.61a44.06,44.06,0,0,0,1.36,9.32,40.1,40.1,0,0,0,4,9.88,43.76,43.76,0,0,0,10.67,12.69,42.9,42.9,0,0,0,14.67,7.7,43.1,43.1,0,0,0,53.86-28.91,41.18,41.18,0,0,0,1.79-10.83c0-1.06,0-2.12,0-3.18s-.11-2.07-.22-3.11a43.27,43.27,0,0,0-15.8-29,43.83,43.83,0,0,0-14.68-7.74,42.58,42.58,0,0,0-25.26.13c-12.19,3.92-20.61,6.18-33.08-1.61a34.82,34.82,0,0,1-10.68-10.42,78.38,78.38,0,0,1,17.8-14.17,77.72,77.72,0,0,1,116.09,59.1,44.08,44.08,0,0,1,.39,5.5c0,.94.06,1.88.06,2.81C377.83,363.11,371.71,379.9,360.52,396.17Z"/></svg>
+    <strong>Корзина</strong>
+    <div *ngIf="cartItems.totalPrice > 0" class="total-price">Итого: {{ cartItems.totalPrice | price }}</div>
+  </div>
+  <div class="cart-body">
+    <strong *ngIf="cartItems.items && cartItems.items.length === 0">Нет продуктов</strong>
+    <ul class="cart-items" *ngIf="cartItems.items && cartItems.items.length > 0">
+      <li class="cart-item" *ngFor="let item of cartItems.items">
+        <img [src]="item.img_url" alt="" width="50px" height="70px">
+        <div class="item-desc">
+          <strong>{{ item.name }}</strong>
+          <div class="item-actions">
+            <div class="quantity-action">
+              <button ></button>
+              <input id="product{{ item.id }}" class="quantity" min="1" name="quantity" [value]="item.quantity" type="number">
+              <button  class="plus"></button>
+            </div>
+            <button class="delete-item">
+              <i class="fa fa-trash-o"></i>
+            </button>
+          </div>
+        </div>
+        <div>{{ (item.price * item.quantity) | price }} uzs</div>
+      </li>
+    </ul>
+  </div>
+  <div class="cart-footer">
+    <div class="continue_shopping" (click)="close()">
+      <i class="fa fa-arrow-left"></i>
+      <span>продолжить покупки</span>
+    </div>
+    <div class="checkout">
+      <a routerLink="cart">оформить заказ</a>
+    </div>
+  </div>
+</div>
+

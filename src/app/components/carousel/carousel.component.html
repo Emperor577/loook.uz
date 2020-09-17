@@ -1,0 +1,20 @@
+<div class="carousel-wrapper">
+  <div class="carousel-content">
+    <div class="custom-slide" *ngFor="let slide of slides; let i = index" (swipeleft)="slideNext()" (swiperight)="slidePrevious()">
+      <img [src]="slide.img" alt="">
+      <div class="slide-text">
+        <h1>{{ slide.text.main }}</h1>
+        <span>{{ slide.text.secondary }}</span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="arrowBtn" class="slide-navigator right-btn" (click)="slideNext()">
+    <i class="fas fa-arrow-right"></i>
+  </div>
+  <div  *ngIf="arrowBtn" class="slide-navigator left-btn" (click)="slidePrevious()">
+    <i class="fas fa-arrow-left"></i>
+  </div>
+  <div class="slide-pagination">
+    <span class="pagination-circle" *ngFor="let item of slides; let i = index" (click)="goToSlide(i)" [id]="'pagination-circle-' + i"></span>
+  </div>
+</div>

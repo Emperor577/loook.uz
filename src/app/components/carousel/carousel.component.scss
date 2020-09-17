@@ -1,0 +1,80 @@
+.carousel-wrapper {
+  width: 100%;
+  height: 55em;
+  position: relative;
+  overflow: hidden;
+  .carousel-content {
+    height: 100%;
+    width: 100000px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    .custom-slide {
+      width: 100vw;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+      .slide-text {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }
+  .slide-navigator {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    z-index: 2;
+    top: calc(50% - 45px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  .right-btn {
+    right: 1%;
+  }
+  .left-btn {
+    left: 1%;
+  }
+  .slide-pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 1%;
+    width: 50%;
+    height: 30px;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .pagination-circle {
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .active-pagination {
+      background: #c00a27 !important;
+      width: 30px;
+      border-radius: 15px;
+    }
+  }
+}

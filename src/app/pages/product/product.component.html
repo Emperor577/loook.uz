@@ -1,0 +1,52 @@
+<div id="content" class="site-content" tabindex="-1" (scroll)="onScroll($event)">
+  <div class="col-full">
+    <div id="primary" class="content-area">
+      <main id="main" class="site-main" >
+        <ul class="products">
+          <li class="mb-10rem post-82 product type-product status-publish has-post-thumbnail product_cat-pizza  instock shipping-taxable purchasable product-type-simple addon-product" *ngFor="let product of products">
+            <div class="product-outer">
+              <div class="product-inner">
+                <div class="product-image-wrapper">
+                  <a  class="woocommerce-LoopProduct-link">
+                    <img width="600" height="280" [src]="product.img_url" class="attachment-pizzaro-product-list-fw-col-1 size-pizzaro-product-list-fw-col-1" alt="{{ product.name }}" >
+                  </a>
+                </div>
+                <div class="product-content-wrapper">
+                  <a  class="woocommerce-LoopProduct-link">
+                    <h3 class="product_name">{{ product.name }}</h3>
+                    <div  class="yith_wapo_groups_container">
+                      <div  class="ywapo_group_container ywapo_group_container_radio form-row form-row-wide " data-requested="1" data-type="radio" data-id="1" data-condition="">
+                        <h3 class="price"><span>{{ product.price | price }} UZS</span></h3>
+                      </div>
+                      <div class="hover-action">
+                        <div class="quantity-block">
+                          <div class="quantity-action">
+                            <button (click)="setDownQuantity(product)"></button>
+                            <input id="product{{ product.id }}"  class="quantity" min="1" name="quantity" value="{{ product.quantity }}" type="number" />
+                            <button class="plus" (click)="setUpQuantity(product)"></button>
+                          </div>
+                        </div>
+                        <button type="submit" name="add-to-cart" value="56" class="button alt" (click)="addProductsToCart(product)">
+                          <span class="addToCartButtonInner" id="animateProduct{{ product.id }}">
+                            <i class="po po-add-to-cart"></i>
+                            add to cart
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </a>
+
+                </div>
+              </div>
+              <!-- /.product-inner -->
+            </div>
+            <!-- /.product-outer -->
+          </li>
+        </ul>
+      </main>
+      <!-- #main -->
+    </div>
+    <!-- #primary -->
+  </div>
+  <!-- .col-full -->
+</div>

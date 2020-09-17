@@ -1,0 +1,143 @@
+$xlDesktop: 2560px;
+$lgDesktop: 1980px;
+$mdDesktop: 1536px;
+$smDesktop: 1366px;
+$xsmDesktop: 1200px;
+$lgTablet: 992px;
+$mdTablet: 768px;
+$smTablet: 600px;
+$lgMobile: 480px;
+$mdMobile: 375px;
+$smMobile: 320px;
+
+@media (min-width: $xlDesktop) {
+  .cart-preview {
+    width: 20%;
+  }
+}
+
+@media (min-width: $lgDesktop) and (max-width: $xlDesktop) {
+  .cart-preview {
+    width: 20%;
+  }
+}
+
+@media (min-width: $mdDesktop) and (max-width: $lgDesktop) {
+  .cart-preview {
+    width: 25%;
+  }
+}
+
+@media (min-width: $smDesktop) and (max-width: $mdDesktop) {
+  .cart-preview {
+    width: 30%;
+  }
+  .header-fixed {
+    nav {
+      .menu {
+        .menu-item {
+          a {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $xsmDesktop) and (max-width: $smDesktop) {
+  .cart-preview {
+    width: 35%;
+  }
+  .header-fixed {
+    nav {
+      .menu {
+        .menu-item {
+          a {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $lgTablet) and (max-width: $xsmDesktop) {
+  ul.products li.product .product-inner {
+    display: flex;
+    align-items: center;
+  }
+  .burgerBtn-open {
+    ul.menu {
+      flex-direction: column;
+      align-items: flex-start;
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+}
+
+@media (min-width: $mdTablet) {
+  ul.products li.product .product-inner {
+    display: flex;
+    align-items: center;
+  }
+  .burgerBtn-open {
+    ul.menu {
+      flex-direction: column;
+      align-items: flex-start;
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+}
+
+@media (min-width: $smTablet) {
+  .burgerBtn-open {
+    ul.menu {
+      flex-direction: column;
+      align-items: flex-start;
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+}
+
+@media (min-width: $lgMobile) {
+  .burgerBtn-open {
+    ul.menu {
+      flex-direction: column;
+      align-items: flex-start;
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+}
+
+@media (min-width: $mdMobile) {
+  .burgerBtn-open {
+    ul.menu {
+      flex-direction: column;
+      align-items: flex-start;
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+}
+
+@media (min-width: $smMobile) {
+  .burgerBtn-open {
+    ul.menu {
+      flex-direction: column;
+      align-items: flex-start;
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+}

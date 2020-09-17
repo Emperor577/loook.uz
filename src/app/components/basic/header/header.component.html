@@ -1,0 +1,101 @@
+<header id="masthead" class="site-header header-v1 mb-0" style="background-image: none; ">
+  <div class="col-full">
+    <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+    <div class="header-wrap">
+      <div class="site-branding">
+        <a routerLink="" class="custom-logo-link" rel="home">
+          <img src="assets/images/logo.svg" alt="">
+        </a>
+      </div>
+      <nav id="site-navigation" class="main-navigation"  aria-label="Primary Navigation">
+        <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">
+          <span id="closeBurgerBtn" class="close-icon" (click)="closeBurgerBtnMenu()">
+            <i class="po po-close-delete"></i>
+          </span>
+          <span id="menuBurgerBtn" class="menu-icon" (click)="openBurgerBtnMenu()">
+            <i class="po po-menu-icon"></i>
+          </span>
+          <span class=" screen-reader-text">Menu</span>
+        </button>
+        <div class="primary-navigation">
+          <ul id="menu-main-menu" class="menu nav-menu" aria-expanded="false">
+            <li class="menu-item">
+              <a routerLink="vacancy">Вакансии</a>
+            </li>
+            <li class="menu-item">
+              <a routerLink="contact">Наши адреса</a>
+            </li>
+          </ul>
+        </div>
+        <div id="burgerMenu" class="handheld-navigation">
+          <span class="phm-close" (click)="closeBurgerBtnMenu()">Close</span>
+          <ul  class="menu">
+            <li class="menu-item" *ngFor="let category of categories">
+              <a [routerLink]="['category', category.id]">
+                <svg class="icons-category" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" [innerHTML]="svg(category.icon)">
+                </svg>
+                {{ category.name }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- #site-navigation -->
+      <div class="header-info-wrapper">
+        <div class="header-phone-numbers">
+          <span class="intro-text">Языки</span>
+          <select class="select-city-phone-numbers" name="city-phone-numbers" id="city-phone-numbers" style="width: 35px">
+            <option value="54 548 779 654">ru</option>
+            <option value="33 398 621 710">uz</option>
+          </select>
+          <span id="city-phone-number-label" class="phone-number">71 207 20 70</span>
+        </div>
+        <div class="nav-cart">
+          <div class="cart-wrapper">
+            <svg class="cart" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="332.9px" height="465.7px" viewBox="0 0 332.9 465.7" style="enable-background:new 0 0 332.9 465.7;" xml:space="preserve">
+                <style type="text/css"> .st0{fill-rule:evenodd;clip-rule:evenodd;} </style>
+              <defs> </defs>
+              <path d="M332.8,430.7l-7.2-261.5c-0.9-31.9-27-57.3-58.9-57.4h-10.3c-0.6-46.2-6.5-72.2-19.6-88.7C221.5,4,197.6,0,166.4,0 S111.3,4,96,23.2c-13.1,16.5-18.9,42.4-19.5,88.4h-10h0c-31.9,0-58.1,25.4-59,57.3L0,430.7c-0.6,18.8,14.2,34.4,33,35 c0.3,0,0.7,0,1,0h264.8c18.8,0,34-15.2,34-34C332.9,431.4,332.9,431,332.8,430.7L332.8,430.7z M166.4,18c31.6,0,46.8,4.4,56.3,16.4 c10.3,12.9,15,36.3,15.6,77.4l-143.9-0.2C95.7,25.9,114.9,18,166.4,18z M310.3,442.8c-3,3.1-7.1,4.9-11.5,4.9H34 c-8.8,0-16-7.2-16-16c0-0.2,0-0.3,0-0.5l7.4-261.8c0.5-22.2,18.8-40,41-39.8h0.1l200.2,0.3c22.2-0.1,40.4,17.7,40.9,39.9l7.2,261.4 C315,435.5,313.4,439.7,310.3,442.8z"/>
+              <path class="st0" d="M226.9,329.2c-2.5,3.1-5.2,5.9-8.1,8.6c-31.8,29-81,26.7-110-5.1C87.1,308.8,82.4,273.9,97,245 c4.9,1.2,9.5,3.4,13.4,6.5c4.1,3.2,7.4,7.3,9.6,11.9c3.5,7.3,3,11.3,3.2,18.6c0.1,3.1,0.6,6.3,1.4,9.3c0.9,3.5,2.2,6.8,4,9.9 c2.7,4.9,6.3,9.2,10.7,12.7c4.3,3.5,9.3,6.1,14.7,7.7c22.8,6.9,46.9-5.9,53.8-28.7c0-0.1,0-0.2,0.1-0.2c1.1-3.5,1.7-7.2,1.8-10.8 c0-1.1,0-2.1,0-3.2s-0.1-2.1-0.2-3.1c-1.2-11.4-6.9-21.8-15.8-29c-4.4-3.5-9.3-6.1-14.7-7.7c-8.2-2.5-17-2.5-25.3,0.1 c-12.2,3.9-20.6,6.2-33.1-1.6c-4.3-2.7-7.9-6.2-10.7-10.4c5.2-5.6,11.2-10.3,17.8-14.2c37.2-21.4,84.7-8.7,106.1,28.5 c5.4,9.4,8.8,19.8,9.9,30.6c0.2,1.8,0.4,3.7,0.4,5.5c0,0.9,0.1,1.9,0.1,2.8C244.2,296.1,238.1,312.9,226.9,329.2z"/>
+            </svg>
+            <div class="cart">
+              <span class="cart intro-text">Корзина</span>
+              <span *ngIf="cartItems.totalPrice > 0" class="cart price">{{ cartItems.totalPrice | price }} uzs</span>
+            </div>
+          </div>
+          <span *ngIf="cartItems.items && cartItems.items.length > 0" class="custom-badge">{{ cartItems.items.length }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="pizzaro-secondary-navigation" id="header">
+      <nav class="secondary-navigation"  aria-label="Secondary Navigation">
+        <ul  class="menu">
+          <li class="menu-item" *ngFor="let category of categories">
+            <a [routerLink]="['category', category.id]">
+              <svg class="icons-category" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" [innerHTML]="svg(category.icon)">
+              </svg>
+              {{ category.name }}
+            </a>
+          </li>
+          <li id="cart-header" class="cart-header" (click)="openCartPreview()">
+            <svg class="cart" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="332.9px" height="465.7px" viewBox="0 0 332.9 465.7" style="enable-background:new 0 0 332.9 465.7;" xml:space="preserve">
+                <style type="text/css"> .st0{fill-rule:evenodd;clip-rule:evenodd;} </style>
+              <defs> </defs>
+              <path d="M332.8,430.7l-7.2-261.5c-0.9-31.9-27-57.3-58.9-57.4h-10.3c-0.6-46.2-6.5-72.2-19.6-88.7C221.5,4,197.6,0,166.4,0 S111.3,4,96,23.2c-13.1,16.5-18.9,42.4-19.5,88.4h-10h0c-31.9,0-58.1,25.4-59,57.3L0,430.7c-0.6,18.8,14.2,34.4,33,35 c0.3,0,0.7,0,1,0h264.8c18.8,0,34-15.2,34-34C332.9,431.4,332.9,431,332.8,430.7L332.8,430.7z M166.4,18c31.6,0,46.8,4.4,56.3,16.4 c10.3,12.9,15,36.3,15.6,77.4l-143.9-0.2C95.7,25.9,114.9,18,166.4,18z M310.3,442.8c-3,3.1-7.1,4.9-11.5,4.9H34 c-8.8,0-16-7.2-16-16c0-0.2,0-0.3,0-0.5l7.4-261.8c0.5-22.2,18.8-40,41-39.8h0.1l200.2,0.3c22.2-0.1,40.4,17.7,40.9,39.9l7.2,261.4 C315,435.5,313.4,439.7,310.3,442.8z"/>
+              <path class="st0" d="M226.9,329.2c-2.5,3.1-5.2,5.9-8.1,8.6c-31.8,29-81,26.7-110-5.1C87.1,308.8,82.4,273.9,97,245 c4.9,1.2,9.5,3.4,13.4,6.5c4.1,3.2,7.4,7.3,9.6,11.9c3.5,7.3,3,11.3,3.2,18.6c0.1,3.1,0.6,6.3,1.4,9.3c0.9,3.5,2.2,6.8,4,9.9 c2.7,4.9,6.3,9.2,10.7,12.7c4.3,3.5,9.3,6.1,14.7,7.7c22.8,6.9,46.9-5.9,53.8-28.7c0-0.1,0-0.2,0.1-0.2c1.1-3.5,1.7-7.2,1.8-10.8 c0-1.1,0-2.1,0-3.2s-0.1-2.1-0.2-3.1c-1.2-11.4-6.9-21.8-15.8-29c-4.4-3.5-9.3-6.1-14.7-7.7c-8.2-2.5-17-2.5-25.3,0.1 c-12.2,3.9-20.6,6.2-33.1-1.6c-4.3-2.7-7.9-6.2-10.7-10.4c5.2-5.6,11.2-10.3,17.8-14.2c37.2-21.4,84.7-8.7,106.1,28.5 c5.4,9.4,8.8,19.8,9.9,30.6c0.2,1.8,0.4,3.7,0.4,5.5c0,0.9,0.1,1.9,0.1,2.8C244.2,296.1,238.1,312.9,226.9,329.2z"/>
+          </svg>
+            <div class="cart-details">
+              <span class="cart-name">Корзина</span>
+              <span class="cart-price" *ngIf="cartItems.totalPrice > 0">{{ cartItems.totalPrice | price }} uzs</span>
+              <span *ngIf="cartItems.items === null" class="cart-price">нет продуктов</span>
+            </div>
+            <span *ngIf="cartItems.items && cartItems.items.length > 0" class="custom-badge">{{ cartItems.items.length }}</span>
+          </li>
+        </ul>
+      </nav>
+      <!-- #secondary-navigation -->
+    </div>
+  </div>
+</header>
+<app-cart-preview id="cart-preview" class="cart-preview"></app-cart-preview>
